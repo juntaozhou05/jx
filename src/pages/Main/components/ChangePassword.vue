@@ -1,8 +1,6 @@
 <template>
-  <div class="right">
-    <div class="right-top">
-        <div class="item-name">{{}}</div>
-    </div>
+  <div class="changePassword">
+    <div class="">修改密码</div>
   </div>
 </template>
 
@@ -13,15 +11,15 @@ export default {
     return {
       msg : ""
     }
-  },
-  
+  }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less">
-  .right {
-    float: left;
-    margin-left: 220px;
+  .changePassword {
+    width:100%;
+    padding:20px;
+    font-size: 18px;
   }
 </style>

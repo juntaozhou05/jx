@@ -1,24 +1,32 @@
 <template>
   <div class="left">
+    <!-- 用户信息 -->
     <div class="user-info">
-        <img src="../../assets/user1.jpg" alt="" width="80">
+        <img src="../../../assets/user1.jpg" alt="" width="80">
         <div class="user-name">{{userName}}</div>
-        <el-row>
-            <el-col>
-                <el-dropdown trigger="click">
-                <span class="el-dropdown-link">
-                    {{userPermission}}<i class="el-icon-caret-bottom el-icon--right"></i>
-                </span>
-                <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item>个人资料</el-dropdown-item>
-                    <el-dropdown-item>修改密码</el-dropdown-item>
-                    <hr>
-                    <el-dropdown-item>安全退出</el-dropdown-item>
-                </el-dropdown-menu>
-                </el-dropdown>
-            </el-col>
-        </el-row>
-
+        <el-dropdown @command="link">
+            <span class="el-dropdown-link">
+                超级管理员<i class="el-icon-caret-bottom el-icon--right"></i>
+            </span>
+            <el-dropdown-menu slot="dropdown">
+                <router-link to="/main/personalData/个人资料">
+                    <el-dropdown-item command="个人资料">
+                        个人资料
+                    </el-dropdown-item>
+                </router-link>
+                <router-link to="/main/changePassword/修改密码">
+                    <el-dropdown-item command="修改密码">
+                        修改密码
+                    </el-dropdown-item>
+                </router-link>
+                <router-link to="/">
+                    <el-dropdown-item command="安全退出" divided>
+                        安全退出
+                    </el-dropdown-item>
+                </router-link>
+            </el-dropdown-menu>
+        </el-dropdown>
+        <!-- 列表菜单 -->
         <el-row class="tac">
             <el-col>
                 <el-menu default-active="1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
@@ -28,9 +36,21 @@
                             <span :class="{ 'is-active' : colorItem1}">系统管理</span>
                         </template>
                         <el-menu-item-group>
-                            <el-menu-item index="1-1" @click="showContent($event,'选项1')">权限管理</el-menu-item>
-                            <el-menu-item index="1-2" @click="showContent($event,'选项2')">角色管理</el-menu-item>
-                            <el-menu-item index="1-3" @click="showContent($event,'选项3')">用户管理</el-menu-item>
+                            <router-link to="/main/authorization/权限管理">
+                                <el-menu-item index="1-1">
+                                    权限管理
+                                </el-menu-item>
+                            </router-link>
+                            <router-link to="/main/roleControl/角色管理">
+                                <el-menu-item index="1-2">
+                                    角色管理
+                                </el-menu-item>
+                            </router-link>
+                            <router-link to="/main/userControl/用户管理">
+                                <el-menu-item index="1-3">
+                                    用户管理
+                                </el-menu-item>
+                            </router-link>
                         </el-menu-item-group>
                     </el-submenu>
                     <el-submenu index="2">
@@ -39,8 +59,8 @@
                             <span :class="{ 'is-active' : colorItem2}">铂金web数据</span> 
                         </template>
                         <el-menu-item-group>
-                            <el-menu-item index="2-1" @click="showContent($event,'选项1')">支付用户管理</el-menu-item>
-                            <el-menu-item index="2-2" @click="showContent($event,'选项2')">用户余额</el-menu-item>
+                            <el-menu-item index="2-1" @click="link('支付用户管理')">支付用户管理</el-menu-item>
+                            <el-menu-item index="2-2" @click="link('用户余额')">用户余额</el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
                 </el-menu>
@@ -62,6 +82,8 @@ export default {
     }
   },
   methods: {
+    ...mapActions(["link"]),
+    // 菜单展开
     handleOpen(key, keyPath) {
         console.log(key, keyPath);
         if(key == 1) {
@@ -70,6 +92,7 @@ export default {
             this.colorItem2 = true
         }
     },
+    //菜单收起
     handleClose(key, keyPath) {
         console.log(key, keyPath);
         if(key == 1) {
@@ -80,6 +103,10 @@ export default {
     },
     showContent(event,val) {
         console.log(val);
+    },
+    quit() {
+        console.log(111);
+        this.$router.push({path: '/'})
     }
   }
 }
@@ -120,6 +147,9 @@ export default {
             ul {
                 background-color: #2f4050;
                 padding-left: 10px;
+                a {
+                    color: #8095a8;
+                }
             }
         }
     }

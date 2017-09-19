@@ -4,7 +4,7 @@ import vuex from 'vuex'
 Vue.use(vuex)
 
 const state = {
-	num: 5
+	num: 5,
 }
 
 const mutations = {
@@ -26,9 +26,9 @@ const actions = {
 }
 
 const getters = { 
-    num: function (state) {
+    num: function(state) {
         return state.num
-    }
+	}
 }
 
 

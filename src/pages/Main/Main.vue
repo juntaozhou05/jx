@@ -10,8 +10,8 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
-import Left from '@/pages/Main/Left'
-import Right from '@/pages/Main/Right'
+import Left from '@/pages/Main/components/Left'
+import Right from '@/pages/Main/components/Right'
 export default {
   data () {
     return {

@@ -33,7 +33,6 @@ time, mark, audio, video {
     vertical-align:baseline;
     background:transparent;
 }
-
 body {
     font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 13px;
@@ -46,30 +45,24 @@ html, body {
     width: 100%;
     height:100%;
 }
-
 :focus {
   outline: 1;
 }
-
 article,aside,canvas,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section,summary { 
     display:block;
 }
-
 nav ul {
     list-style:none;
 }
-
 blockquote, q {
     quotes:none;
 }
-
 blockquote:before, blockquote:after,
 q:before, q:after {
     content:'';
     content:none;
 }
-
 a {
     margin:0;
     padding:0;
@@ -77,35 +70,30 @@ a {
     font-size:100%;
     vertical-align:baseline;
     background:transparent;
+    text-decoration: none;
 }
-
 ins {
     background-color:#ff9;
     color:#000;
     text-decoration:none;
 }
-
 mark {
     background-color:#ff9;
     color:#000; 
     font-style:italic;
     font-weight:bold;
 }
-
 del {
     text-decoration: line-through;
 }
-
 abbr[title], dfn[title] {
     border-bottom:1px dotted #000;
     cursor:help;
 }
-
 table {
     border-collapse:collapse;
     border-spacing:0;
 }
-
 hr {
     display:block;
     height:1px;
@@ -114,7 +102,6 @@ hr {
     margin:1em 0;
     padding:0;
 }
-
 input, select {
     vertical-align:middle;
 }
