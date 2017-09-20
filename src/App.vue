@@ -114,7 +114,7 @@ input, select {
 }
 .router-fade-enter, .router-fade-leave-active {
     opacity: 0;
-    transform:translateX(10px);
+    transform:translateX(20px);
 }
 
 </style>

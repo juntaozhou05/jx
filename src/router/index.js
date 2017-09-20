@@ -10,6 +10,8 @@ import ChangePassword from '@/pages/Main/components/ChangePassword'
 import Authorization from '@/pages/Main/components/Authorization'
 import RoleControl from '@/pages/Main/components/RoleControl'
 import UserControl from '@/pages/Main/components/UserControl'
+import PayControl from '@/pages/Main/components/PayControl'
+import UserBalance from '@/pages/Main/components/UserBalance'
 
 Vue.use(Router)
 
@@ -37,12 +39,14 @@ export default new Router({
       component: Main,
       //内容页面
       children: [
-        {name: 'Content',path: '/main/content/:type', component:Content},
-        {name: 'PersonalData',path: '/main/personalData/:type', component:PersonalData},
-        {name: 'ChangePassword',path: '/main/changePassword/:type', component:ChangePassword},
-        {name: 'Authorization',path: '/main/authorization/:type', component:Authorization},
-        {name: 'RoleControl',path: '/main/roleControl/:type', component:RoleControl},
-        {name: 'UserControl',path: '/main/userControl/:type', component:UserControl}
+        {name: 'Content',path: '/main/content/:type', component:Content}, //首页
+        {name: 'PersonalData',path: '/main/personalData/:type', component:PersonalData}, //用户资料
+        {name: 'ChangePassword',path: '/main/changePassword/:type', component:ChangePassword},//修改密码
+        {name: 'Authorization',path: '/main/authorization/:type', component:Authorization},//权限管理
+        {name: 'RoleControl',path: '/main/roleControl/:type', component:RoleControl},//角色管理
+        {name: 'UserControl',path: '/main/userControl/:type', component:UserControl},//用户管理
+        {name: 'PayControl',path: '/main/payControl/:type', component:PayControl},//支付用户管理
+        {name: 'UserBalance',path: '/main/userBalance/:type', component:UserBalance}//用户余额
       ]
     }
   ]

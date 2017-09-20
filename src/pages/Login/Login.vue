@@ -11,7 +11,7 @@
         <el-input placeholder="验证码" v-model="form.name"></el-input>
       </el-form>
       <img @click="loadCode" class="code" src="http://paytest.jxzf.me/jxpaywebsys-1.0.1/kaptcha.do" alt="">
-      <el-button type="success">登录</el-button>
+      <el-button type="success" @click="login">登录</el-button>
     </div>
   </div>
 </template>
@@ -30,6 +30,9 @@ export default {
   methods: {
     loadCode(event) {
       event.currentTarget.src = "http://paytest.jxzf.me/jxpaywebsys-1.0.1/kaptcha.do"
+    },
+    login() {
+      this.$router.push('./main/content/主页')
     }
   }
 }

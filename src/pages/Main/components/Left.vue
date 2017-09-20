@@ -4,7 +4,7 @@
     <div class="user-info">
         <img src="../../../assets/user1.jpg" alt="" width="80">
         <div class="user-name">{{userName}}</div>
-        <el-dropdown @command="link">
+        <el-dropdown @command="">
             <span class="el-dropdown-link">
                 超级管理员<i class="el-icon-caret-bottom el-icon--right"></i>
             </span>
@@ -59,8 +59,16 @@
                             <span :class="{ 'is-active' : colorItem2}">铂金web数据</span> 
                         </template>
                         <el-menu-item-group>
-                            <el-menu-item index="2-1" @click="link('支付用户管理')">支付用户管理</el-menu-item>
-                            <el-menu-item index="2-2" @click="link('用户余额')">用户余额</el-menu-item>
+                            <router-link to="/main/payControl/支付用户管理">
+                                <el-menu-item index="2-1">
+                                    支付用户管理
+                                </el-menu-item>
+                            </router-link>
+                            <router-link to="/main/userBalance/用户余额">
+                                <el-menu-item index="2-2">
+                                    用户余额
+                                </el-menu-item>
+                            </router-link>
                         </el-menu-item-group>
                     </el-submenu>
                 </el-menu>
@@ -82,7 +90,6 @@ export default {
     }
   },
   methods: {
-    ...mapActions(["link"]),
     // 菜单展开
     handleOpen(key, keyPath) {
         console.log(key, keyPath);
