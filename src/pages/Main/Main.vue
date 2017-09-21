@@ -16,12 +16,19 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
+import config from '@/config/config'
 import Left from '@/pages/Main/components/Left'
 import Right from '@/pages/Main/components/Right'
 export default {
   data () {
     return {
       msg : ""
+    }
+  },
+  mounted: function(){
+    //判断是否登录
+    if(config.getCookie().id == 0 || config.getCookie().id == null || config.getCookie().id == undefined) {
+      this.$router.push('/')
     }
   },
   components: {
