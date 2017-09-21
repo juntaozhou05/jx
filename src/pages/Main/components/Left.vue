@@ -4,7 +4,7 @@
     <div class="user-info">
         <img src="../../../assets/user1.jpg" alt="" width="80">
         <div class="user-name">{{userName}}</div>
-        <el-dropdown @command="">
+        <el-dropdown >
             <span class="el-dropdown-link">
                 超级管理员<i class="el-icon-caret-bottom el-icon--right"></i>
             </span>

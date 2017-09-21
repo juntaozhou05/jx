@@ -5,6 +5,12 @@
     <Left></Left>
     <!-- 右边内容区 -->
     <Right></Right>
+    <div class="bottom">
+      <span class="instr"> 
+        <span>© 2016-2017 </span>
+        <a href="">jxpay</a>
+      </span>
+    </div>
   </div>
 </template>
 
@@ -30,5 +36,18 @@ export default {
   .main {
     width: 100%;
     height:100%;
+    .bottom {
+      height: 50px;
+      line-height: 50px;
+      background-color: white;
+      position: fixed;
+      bottom:0;
+      left:0;
+      width: 100%;
+      .instr {
+        position: absolute;
+        right:10px;
+      }
+    }
   }
 </style>

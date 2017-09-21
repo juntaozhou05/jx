@@ -20,7 +20,7 @@
           </td>
       </tr>
     </table>
-    <el-button type="primary" :loading="loading" @click="submit">{{btn}}</el-button>
+    <el-button type="success" :loading="loading" @click="submit">{{btn}}</el-button>
   </div>
 </template>
 
@@ -64,7 +64,7 @@ export default {
         }
       }
     }
-    .el-button--primary {
+    .el-button--success {
       margin-top: 30px;
       margin-left: 40px;
     }

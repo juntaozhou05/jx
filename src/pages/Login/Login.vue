@@ -8,7 +8,7 @@
       <el-form label-width="80px">
         <el-input placeholder="用户名" v-model="form.name"></el-input>
         <el-input placeholder="密码" v-model="form.name"></el-input>
-        <el-input placeholder="验证码" v-model="form.name"></el-input>
+        <el-input placeholder="验证码" v-model="form.code"></el-input>
       </el-form>
       <img @click="loadCode" class="code" src="http://paytest.jxzf.me/jxpaywebsys-1.0.1/kaptcha.do" alt="">
       <el-button type="success" @click="login">登录</el-button>

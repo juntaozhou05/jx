@@ -6,9 +6,9 @@
         <td>头像</td>
         <td class="upimg">
           <img id="preview" />
-          <el-button type="primary">
+          <el-button type="success">
             <input type="file" class="upfile" @change="preview($event.currentTarget)" accept="image/*">
-            <i class="el-icon-upload el-icon--right"></i>
+            <i class="el-icon-upload2 el-icon--right"> 上传</i>
             </el-button>
         </td>
       </tr>
@@ -37,7 +37,7 @@
         </td>
       </tr>
     </table>
-    <el-button type="primary" :loading="loading" @click="submit">{{btn}}</el-button>
+    <el-button type="success" :loading="loading" @click="submit">{{btn}}</el-button>
   </div>
 </template>
 
@@ -100,12 +100,17 @@ export default {
           height: 100px;
           border:1px solid #eaeaea;
         }
-        .el-button--primary {
+        .el-button--success {
           position: absolute;
           bottom:25px;
           left:150px;
+          cursor: auto;
           .upfile {
-            width:70px;
+            width:80px;
+            position: absolute;
+            left: 0;
+            top:5px;
+            opacity: 0;
           }
         }
         .text {
@@ -113,7 +118,7 @@ export default {
         }
       }
     }
-    .el-button--primary {
+    .el-button--success {
       margin-top: 30px;
       margin-left: 20px;
     }
