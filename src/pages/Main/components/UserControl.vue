@@ -41,11 +41,10 @@ export default {
     display: none;
   }
   .userControl {
-    width:80%;
     padding:20px;
     font-size: 14px;
     background-color:white;
-    margin:20px 220px 20px 20px;
+    margin:20px;
     padding-right: 220px;
     .title {
       font-weight: bold;

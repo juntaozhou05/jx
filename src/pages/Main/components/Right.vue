@@ -33,11 +33,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less">
   .right {
-    display: inline-block;
-    width:100%;
-    padding-left: 220px;
+    margin-left: 220px;
+    padding-top: 50px;
     .right-top {
-      margin-top: 40px;
       border-bottom:2px solid black;
       width:100%;
       height: 40px;
@@ -53,7 +51,7 @@ export default {
       }
       .quit {
         position: absolute;
-        right:220px;
+        right: 0;
         padding:0 20px;
         background-color:white;
         cursor: pointer;
