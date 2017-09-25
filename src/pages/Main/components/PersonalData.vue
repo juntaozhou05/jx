@@ -43,6 +43,7 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
+import config from '@/config/config'
 export default {
   data () {
     return {
@@ -52,6 +53,21 @@ export default {
       loading: false,
       btn: '提交'
     }
+  },
+  mounted: function() {
+    //获取用户资料
+    this.$http.post(config.api + "/sys/manager/selectManager.do",
+      {
+        id: config.getCookie().id
+      },
+      {emulateJSON:true}).then(
+      (res)=> {
+        // 处理成功的结果
+        console.log(res.body)
+      },(res)=> {
+        // 处理失败的结果
+        this.$message("出错啦！")
+    });
   },
   methods: {
     //上传图片

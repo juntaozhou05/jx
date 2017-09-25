@@ -80,6 +80,7 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
+import config from '@/config/config'
 export default {
   data () {
     return {
@@ -88,6 +89,21 @@ export default {
       userName : "admin",
       userPermission: "超级管理员"
     }
+  },
+  mounted: function() {
+    //获取用户权限
+    this.$http.post(config.api + "/getPermission.do",
+      {
+        id: config.getCookie().id
+      },
+      {emulateJSON:true}).then(
+      (res)=> {
+        // 处理成功的结果
+        console.log(res.body)
+      },(res)=> {
+        // 处理失败的结果
+        this.$message("出错啦！")
+      });
   },
   methods: {
     // 菜单展开
